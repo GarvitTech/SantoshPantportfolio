@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Santosh Kumar Pant — Head Chef &amp; Fermentation Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1712;
+    --ink2:#241d16;
+    --ink3:#2c231a;
+    --paper:#f6efe4;
+    --paper-dim:#e9decb;
+    --amber:#d9a441;
+    --amber-bright:#f0bf5f;
+    --sage:#8a9a68;
+    --paprika:#bb5a34;
+    --line: rgba(246,239,228,0.14);
+    --font-display:'Fraunces', serif;
+    --font-body:'Work Sans', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+    --maxw: 1180px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--font-body);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  ::selection{ background:var(--amber); color:var(--ink); }
+
+  /* ---------- texture ---------- */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  .eyebrow{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--amber); margin:0 0 14px;
+  }
+  .eyebrow::before{ content:"— "; color:var(--sage); }
+
+  h1,h2,h3{ font-family:var(--font-display); font-weight:600; margin:0; color:var(--paper); }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px; backdrop-filter: blur(10px);
+    background:linear-gradient(to bottom, rgba(28,23,18,.86), rgba(28,23,18,0));
+    transition:background .3s ease;
+  }
+  .nav-mark{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; letter-spacing:.01em; }
+  .nav-mark span{ color:var(--amber); }
+  .nav-links{ display:flex; gap:34px; list-style:none; margin:0; padding:0; font-size:.86rem; letter-spacing:.03em; }
+  .nav-links a{ text-decoration:none; opacity:.78; transition:opacity .25s ease, color .25s ease; position:relative; }
+  .nav-links a:hover{ opacity:1; color:var(--amber-bright); }
+  .nav-cta{
+    font-family:var(--font-mono); font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+    border:1px solid var(--line); padding:10px 18px; border-radius:999px; text-decoration:none;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .nav-cta:hover{ border-color:var(--amber); background:rgba(217,164,65,.1); }
+  .nav-toggle{ display:none; }
+  @media (max-width:840px){
+    .nav-links{ display:none; }
+    .nav-toggle{
+      display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;
+    }
+    .nav-toggle span{ width:22px; height:2px; background:var(--paper); }
+    .nav-cta{ padding:8px 14px; font-size:.68rem; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex; align-items:center;
+    position:relative;
+    padding-top:110px; padding-bottom:60px;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 78% 32%, rgba(217,164,65,.16), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 15% 80%, rgba(138,154,104,.10), transparent 60%);
+  }
+  .hero-inner{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center;
+    max-width:var(--maxw); margin:0 auto; padding:0 32px; width:100%;
+  }
+  @media (max-width:900px){
+    .hero-inner{ grid-template-columns:1fr; text-align:left; }
+  }
+  @media (max-width:640px){ .hero-inner{ padding:0 20px; } }
+
+  .hero h1{
+    font-size:clamp(2.6rem, 6.6vw, 5.1rem);
+    line-height:.98; letter-spacing:-.01em;
+    font-variation-settings:"opsz" 100;
+  }
+  .hero h1 em{ font-style:italic; color:var(--amber); font-weight:500; }
+  .tagline{
+    max-width:46ch; margin:22px 0 0; font-size:1.06rem; color:var(--paper-dim); font-weight:300;
+  }
+  .cta-row{ display:flex; gap:16px; margin-top:34px; flex-wrap:wrap; }
+  .btn-primary,.btn-ghost{
+    font-family:var(--font-mono); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase;
+    padding:15px 26px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-primary{ background:var(--amber); color:var(--ink); font-weight:600; }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -10px rgba(217,164,65,.55); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--paper); }
+  .btn-ghost:hover{ border-color:var(--paper); transform:translateY(-3px); }
+
+  .stat-strip{
+    display:flex; gap:0; margin-top:56px; border-top:1px solid var(--line); padding-top:22px; flex-wrap:wrap;
+  }
+  .stat{ padding-right:34px; margin-right:34px; border-right:1px solid var(--line); }
+  .stat:last-child{ border-right:none; }
+  .stat b{ display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--amber-bright); font-weight:600; }
+  .stat span{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--paper-dim); }
+  @media (max-width:640px){ .stat{ padding-right:20px; margin-right:20px; } .stat b{ font-size:1.35rem; } }
+
+  /* ---------- 3D jar ---------- */
+  .jar-stage{
+    perspective:1100px; display:flex; justify-content:center; align-items:center;
+  }
+  .jar-3d{
+    position:relative; width:min(320px, 70vw); transform-style:preserve-3d;
+    transition:transform .12s ease-out;
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,.5));
+  }
+  .jar-glass{
+    position:relative; width:100%; aspect-ratio:3/4;
+    clip-path: polygon(30% 0%, 70% 0%, 78% 6%, 84% 14%, 100% 30%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 30%, 16% 14%, 22% 6%);
+    background:linear-gradient(160deg, rgba(246,239,228,.10), rgba(246,239,228,.02));
+    border:1px solid rgba(246,239,228,.25);
+    overflow:hidden;
+  }
+  .jar-liquid{
+    position:absolute; left:0; right:0; bottom:0; height:58%;
+    background:linear-gradient(180deg, var(--amber-bright), var(--amber) 40%, #a9772c 100%);
+    transition:height 1.4s cubic-bezier(.2,.9,.2,1);
+  }
+  .jar-liquid::before{
+    content:""; position:absolute; top:-8px; left:0; right:0; height:16px;
+    background:radial-gradient(ellipse at center, rgba(255,255,255,.35), transparent 70%);
+    animation:wobble 4s ease-in-out infinite;
+  }
+  @keyframes wobble{ 0%,100%{ transform:translateY(0) scaleX(1);} 50%{ transform:translateY(-3px) scaleX(1.02);} }
+  .bubble{
+    position:absolute; bottom:0; width:6px; height:6px; border-radius:50%;
+    background:rgba(246,239,228,.55); animation:rise linear infinite;
+  }
+  @keyframes rise{ 0%{ transform:translateY(0) scale(.6); opacity:0; } 15%{ opacity:.9;} 100%{ transform:translateY(-220px) scale(1); opacity:0; } }
+  .jar-label{
+    position:absolute; left:50%; top:38%; transform:translate(-50%,-50%) rotate(-3deg);
+    background:var(--paper); color:var(--ink); font-family:var(--font-mono); font-size:.62rem;
+    letter-spacing:.08em; text-transform:uppercase; padding:10px 14px; text-align:center; line-height:1.5;
+    box-shadow:0 10px 20px rgba(0,0,0,.35); border:1px solid rgba(0,0,0,.1);
+  }
+  .jar-label b{ display:block; font-family:var(--font-display); font-size:.95rem; text-transform:none; letter-spacing:0; }
+  .jar-lid{
+    width:34%; height:5%; margin:0 auto; background:linear-gradient(180deg,#3a2f22,#241c14);
+    border-radius:3px 3px 0 0; border:1px solid rgba(246,239,228,.15); border-bottom:none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .jar-liquid::before, .bubble{ animation:none; }
+  }
+
+  /* ---------- section shell ---------- */
+  section{ position:relative; padding:110px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(2rem,4vw,2.9rem); letter-spacing:-.01em; }
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- about ---------- */
+  .about{ background:var(--ink2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start; }
+  @media (max-width:840px){ .about-grid{ grid-template-columns:1fr; gap:36px; } }
+  .about p{ color:var(--paper-dim); font-size:1.04rem; font-weight:300; }
+  .about-quote{
+    font-family:var(--font-display); font-style:italic; font-weight:500; font-size:1.5rem;
+    color:var(--amber-bright); line-height:1.35; border-left:2px solid var(--amber); padding-left:22px;
+  }
+  .locale-mono{ margin-top:30px; font-family:var(--font-mono); font-size:.78rem; color:var(--sage); letter-spacing:.03em; }
+
+  /* ---------- competencies ---------- */
+  .comp-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; perspective:1400px; }
+  @media (max-width:900px){ .comp-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .comp-grid{ grid-template-columns:1fr; } }
+  .card{
+    position:relative; background:var(--ink3); border:1px solid var(--line); border-radius:8px;
+    padding:26px 24px 22px; transform-style:preserve-3d; transition:transform .18s ease, border-color .25s ease, background .25s ease;
+    cursor:default;
+  }
+  .card::after{
+    content:""; position:absolute; top:0; left:22px; width:16px; height:16px; border-radius:50%;
+    background:var(--ink); border:1px solid var(--line); transform:translateY(-50%);
+  }
+  .card:hover{ border-color:var(--amber); background:#2f261b; }
+  .card .idx{ font-family:var(--font-mono); font-size:.68rem; color:var(--sage); letter-spacing:.08em; }
+  .card h3{ font-size:1.08rem; font-weight:600; margin-top:12px; font-family:var(--font-body); }
+
+  /* ---------- experience / starter log ---------- */
+  .experience{ background:var(--ink); }
+  .exp-layout{ display:grid; grid-template-columns:180px 1fr; gap:56px; }
+  @media (max-width:840px){ .exp-layout{ grid-template-columns:1fr; } .jar-side{ display:none; } }
+  .jar-side{ position:sticky; top:120px; height:fit-content; }
+  .jar-side .jar-3d{ width:150px; }
+  .jar-side .jar-caption{ font-family:var(--font-mono); font-size:.66rem; color:var(--paper-dim); text-align:center; margin-top:14px; letter-spacing:.05em; }
+
+  .role{ padding:30px 0; border-bottom:1px solid var(--line); }
+  .role:first-child{ padding-top:0; }
+  .role-top{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
+  .role h3{ font-size:1.35rem; font-weight:600; }
+  .role .period{ font-family:var(--font-mono); font-size:.72rem; color:var(--amber); letter-spacing:.05em; white-space:nowrap; }
+  .role .org{ color:var(--sage); font-size:.92rem; margin-top:4px; font-style:italic; font-family:var(--font-display); }
+  .role ul{ margin:16px 0 0; padding-left:18px; color:var(--paper-dim); font-size:.94rem; font-weight:300; }
+  .role li{ margin-bottom:7px; }
+  .role.minor h3{ font-size:1.05rem; }
+  .role.minor ul{ font-size:.9rem; }
+
+  /* ---------- gallery / blast button ---------- */
+  .gallery{ background:var(--ink2); border-top:1px solid var(--line); text-align:center; }
+  .gallery-sub{ font-family:var(--font-body); font-weight:300; color:var(--paper-dim); font-size:.98rem; margin:14px auto 0; max-width:44ch; }
+  .blast-zone{ position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:44px auto 54px; }
+  .blast-btn{
+    position:relative; z-index:20; width:120px; height:120px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, var(--amber-bright), var(--amber) 55%, #a9772c 100%);
+    border:none; cursor:pointer; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink); font-weight:700; box-shadow:0 20px 45px -12px rgba(217,164,65,.55), inset 0 -8px 14px rgba(0,0,0,.18);
+    transition:transform .2s ease, box-shadow .2s ease;
+    display:flex; align-items:center; justify-content:center; text-align:center; line-height:1.3; padding:10px;
+  }
+  .blast-btn:hover{ transform:scale(1.05); }
+  .blast-btn:active{ transform:scale(.95); }
+  .ripple{
+    position:absolute; width:120px; height:120px; border-radius:50%; border:1px solid var(--amber);
+    opacity:0; z-index:5;
+  }
+  .ripple.go{ animation:ripple 1s ease-out forwards; }
+  @keyframes ripple{ 0%{ opacity:.6; transform:scale(1);} 100%{ opacity:0; transform:scale(2.6);} }
+
+  .dish-field{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+    max-width:1080px; margin:0 auto; text-align:left; perspective:1600px;
+  }
+  @media (max-width:900px){ .dish-field{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:600px){ .dish-field{ grid-template-columns:1fr; gap:18px; } }
+
+  .dish{
+    background:var(--ink3); border:1px solid var(--line); border-radius:12px; overflow:hidden;
+    opacity:0; transform:translateY(34px) scale(.94);
+    transition:opacity .7s cubic-bezier(.17,.84,.44,1), transform .7s cubic-bezier(.17,.84,.44,1), border-color .25s ease;
+  }
+  .dish.in{ opacity:1; transform:translateY(0) scale(1); }
+  .dish:hover{ border-color:var(--amber); }
+  .dish-media{ aspect-ratio:4/3; overflow:hidden; }
+  .dish-media img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease; }
+  .dish:hover .dish-media img{ transform:scale(1.06); }
+  .dish-body{ padding:18px 20px 22px; }
+  .dish h4{ font-family:var(--font-display); font-size:1.08rem; color:var(--paper); margin:0 0 8px; font-weight:600; }
+  .dish p{ font-family:var(--font-body); font-size:.86rem; color:var(--paper-dim); font-weight:300; margin:0; line-height:1.5; }
+
+  /* ---------- education ---------- */
+  .education{ background:var(--ink); }
+  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  @media (max-width:760px){ .edu-grid{ grid-template-columns:1fr; } }
+  .edu-item{ border-left:2px solid var(--sage); padding-left:20px; margin-bottom:26px; }
+  .edu-item h4{ font-family:var(--font-display); font-size:1.1rem; margin:0 0 4px; color:var(--paper); }
+  .edu-item span{ font-family:var(--font-mono); font-size:.72rem; color:var(--amber); letter-spacing:.04em; }
+  .edu-item p{ margin:6px 0 0; color:var(--paper-dim); font-size:.88rem; }
+  .lang-list{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+  .lang-chip{ font-family:var(--font-mono); font-size:.68rem; border:1px solid var(--line); padding:6px 12px; border-radius:999px; letter-spacing:.04em; }
+
+  /* ---------- footer / contact ---------- */
+  footer{ background:var(--ink2); border-top:1px solid var(--line); padding:90px 0 40px; }
+  .contact-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:50px; }
+  @media (max-width:760px){ .contact-grid{ grid-template-columns:1fr; } }
+  footer h2{ font-size:clamp(2rem,5vw,3.4rem); line-height:1.05; }
+  .contact-list{ margin-top:30px; display:flex; flex-direction:column; gap:14px; }
+  .contact-list a{ text-decoration:none; display:flex; gap:12px; align-items:center; font-size:.98rem; color:var(--paper-dim); transition:color .2s ease; }
+  .contact-list a:hover{ color:var(--amber-bright); }
+  .contact-list .tag{ font-family:var(--font-mono); font-size:.62rem; color:var(--sage); text-transform:uppercase; letter-spacing:.08em; width:70px; flex-shrink:0; }
+  .foot-bottom{ margin-top:70px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--font-mono); font-size:.68rem; color:var(--paper-dim); letter-spacing:.03em; }
+
+  .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber-bright); outline-offset:3px; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav id="siteNav">
+  <div class="nav-mark">Santosh<span>.</span>Pant</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Craft</a></li>
+    <li><a href="#experience">Kitchens</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:santoshpant@hotmail.com">Hire the Chef</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Head Chef · Fermentation Production Specialist</p>
+      <h1>Chef Santosh<br><em>Kumar Pant</em></h1>
+      <p class="tagline">Thirteen years turning flour, brine and live culture into gluten-free, vegan kitchens that pass every audit and still taste like craft — across Kuwait and India.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="mailto:santoshpant@hotmail.com">Start a Conversation →</a>
+        <a class="btn-ghost" href="Santosh_Kumar_Pant_CV.pdf" download>Download Full CV</a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><b>13+</b><span>Years in Kitchens</span></div>
+        <div class="stat"><b>4</b><span>Kitchens Led</span></div>
+        <div class="stat"><b>28–35%</b><span>Target Food Cost</span></div>
+        <div class="stat"><b>HACCP</b><span>Certified Practice</span></div>
+      </div>
+    </div>
+    <div class="jar-stage">
+      <div class="jar-3d" id="heroJar">
+        <div class="jar-lid"></div>
+        <div class="jar-glass">
+          <div class="jar-liquid" id="heroLiquid">
+            <span class="bubble" style="left:20%; animation-duration:3.2s; animation-delay:0s;"></span>
+            <span class="bubble" style="left:45%; animation-duration:4s; animation-delay:.6s;"></span>
+            <span class="bubble" style="left:65%; animation-duration:3.6s; animation-delay:1.4s;"></span>
+            <span class="bubble" style="left:80%; animation-duration:4.4s; animation-delay:.2s;"></span>
+            <span class="bubble" style="left:32%; animation-duration:3.8s; animation-delay:2s;"></span>
+          </div>
+          <div class="jar-label"><b>13 Years of Experience</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="eyebrow">Professional Summary</p>
+      <p class="about-quote">"Traditional fermentation science, plated with modern food safety and health-food standards."</p>
+      <p class="locale-mono">📍 Currently Kuwait · Visa 18, transferable<br>🏔 Home base — Pithoragarh, Uttarakhand, India</p>
+    </div>
+    <div class="reveal">
+      <p>Highly skilled Head Chef, Fermentation Production Specialist and Food Safety professional with over 13 years of culinary and production experience across Kuwait and India. Specialist in artisan sourdough, lacto-fermented vegetables, kombucha, water kefir and gluten-free vegan product development.</p>
+      <p>Proven across recipe costing, nutritional analysis, HACCP compliance and kitchen team leadership — running food safety audits, temperature monitoring and full regulatory compliance without ever losing the craft in the process.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPETENCIES ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Core Competencies</p>
+      <h2>What's on the recipe card</h2>
+    </div>
+    <div class="comp-grid" id="compGrid">
+      <div class="card reveal"><p class="idx">01</p><h3>Fermentation Production</h3></div>
+      <div class="card reveal"><p class="idx">02</p><h3>Artisan Sourdough — GF &amp; Vegan</h3></div>
+      <div class="card reveal"><p class="idx">03</p><h3>Recipe Costing &amp; Cost Cards</h3></div>
+      <div class="card reveal"><p class="idx">04</p><h3>Nutritional Analysis</h3></div>
+      <div class="card reveal"><p class="idx">05</p><h3>HACCP &amp; Food Safety</h3></div>
+      <div class="card reveal"><p class="idx">06</p><h3>Inventory &amp; Yield Management</h3></div>
+      <div class="card reveal"><p class="idx">07</p><h3>Menu Planning &amp; Development</h3></div>
+      <div class="card reveal"><p class="idx">08</p><h3>Supplier Negotiation</h3></div>
+      <div class="card reveal"><p class="idx">09</p><h3>Kitchen Team Leadership</h3></div>
+      <div class="card reveal"><p class="idx">10</p><h3>Lacto-Fermented Vegetables</h3></div>
+      <div class="card reveal"><p class="idx">11</p><h3>Kombucha &amp; Water Kefir</h3></div>
+      <div class="card reveal"><p class="idx">12</p><h3>Allergen &amp; Label Compliance</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Starter Log</p>
+      <h2>Thirteen years, one culture kept alive</h2>
+    </div>
+    <div class="exp-layout">
+      <div class="jar-side">
+        <div class="jar-3d" id="expJarWrap" style="filter:none;">
+          <div class="jar-lid"></div>
+          <div class="jar-glass">
+            <div class="jar-liquid" id="expLiquid" style="height:8%;">
+              <span class="bubble" style="left:25%; animation-duration:3s;"></span>
+              <span class="bubble" style="left:55%; animation-duration:3.7s; animation-delay:1s;"></span>
+              <span class="bubble" style="left:75%; animation-duration:3.3s; animation-delay:.4s;"></span>
+            </div>
+          </div>
+        </div>
+        <p class="jar-caption">Career, fed on schedule<br>since 2013</p>
+      </div>
+
+      <div class="roles">
+        <div class="role reveal">
+          <div class="role-top"><h3>Head Chef &amp; Fermentation Production Specialist</h3><span class="period">Dec 2021 — Present</span></div>
+          <p class="org">Bluezone Organic — Gluten-Free, Vegan Concept · Kuwait</p>
+          <ul>
+            <li>Runs end-to-end fermentation production: artisan sourdough, lacto-fermented pickles, kimchi, sauerkraut and cultured spreads.</li>
+            <li>Standardises gluten-free and vegan recipes for consistent quality, texture and nutrition — costed to a 28–35% food-cost target.</li>
+            <li>Owns the HACCP plan across every stage, plus daily temperature logs and internal food-safety audits meeting Kuwait MOH standards.</li>
+            <li>Trains the kitchen team on allergen handling, cross-contamination prevention and HACCP protocol.</li>
+          </ul>
+        </div>
+
+        <div class="role reveal">
+          <div class="role-top"><h3>Head Chef</h3><span class="period">Jul 2018 — Nov 2021</span></div>
+          <p class="org">The Dining Doctor · Kuwait</p>
+          <ul>
+            <li>Ran full kitchen operations, menu planning and team supervision for a health-focused restaurant.</li>
+            <li>Designed calorie-controlled, allergen-free menus matched to customer dietary needs.</li>
+          </ul>
+        </div>
+
+        <div class="role reveal minor">
+          <div class="role-top"><h3>Assistant Chef</h3><span class="period">Jun 2016 — Jul 2018</span></div>
+          <p class="org">BABEL — Lebanese Concept, M.H. Alshaya Co. · Kuwait</p>
+          <ul>
+            <li>Executed Lebanese cuisine at high volume across a multinational restaurant chain, holding portion control and recipe standards.</li>
+          </ul>
+        </div>
+
+        <div class="role reveal minor">
+          <div class="role-top"><h3>Chef de Partie</h3><span class="period">Mar 2013 — May 2016</span></div>
+          <p class="org">Pasta Mania — Italian Concept · Kuwait</p>
+          <ul>
+            <li>Ran a dedicated kitchen section for Italian service, keeping mise en place tight and food cost controlled.</li>
+          </ul>
+        </div>
+
+        <div class="role reveal minor">
+          <div class="role-top"><h3>Earlier Positions</h3><span class="period">India</span></div>
+          <p class="org">Commis Chef I, Philip Bistro (New Delhi) · Commis Chef II, Visionnaire Café (NCR Delhi) · Commis Chef, Sun &amp; Sand (Nagpur)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK / GALLERY ================= -->
+<section class="gallery gallery-expanded" id="work">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <p class="eyebrow">Signature Work</p>
+      <h2>From the pass</h2>
+      <p class="gallery-sub">Six plates, straight out of the kitchen — press the bell to plate them.</p>
+    </div>
+    <div class="blast-zone">
+      <button class="blast-btn" id="blastBtn" aria-expanded="false">Press to<br>Plate</button>
+      <span class="ripple" id="rippleFx"></span>
+    </div>
+    <div class="dish-field" id="dishField">
+      <div class="dish">
+        <div class="dish-media"><img src="images/sourdough.jpg" alt="Seeded gluten-free sourdough loaf" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Seeded Sourdough Loaf</h4>
+          <p>Naturally leavened, gluten-free and vegan — a multi-seed crust proofed and read by feel, not just formula.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-media"><img src="images/blueberry-muffin.jpg" alt="Gluten-free blueberry almond muffin" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Blueberry Almond Muffin</h4>
+          <p>Gluten-free batter folded with wild blueberries, finished with toasted almond flakes.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-media"><img src="images/berry-cake.jpg" alt="Gluten-free vegan mixed berry cake" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Mixed Berry Celebration Cake</h4>
+          <p>A G.F. naked vanilla sponge with dairy-free buttercream, crowned in fresh berries and mint.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-media"><img src="images/redsauerkraut.png" alt="Tangy red sauerkraut" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Tangy Red Sauerkraut</h4>
+          <p>A vibrant, deep-purple fermented cabbage, naturally tangy and slightly effervescent from live lactic acid cultures.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-media"><img src="images/chimichurri-steak.jpg" alt="Chimichurri-marinated grilled steak" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Chimichurri-Marinated Steak</h4>
+          <p>Grilled to a clean medium-rare, sliced and dressed with a bright herb chimichurri.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-media"><img src="images/berry-layer-cake.jpg" alt="Naked berry layer cake" loading="lazy"></div>
+        <div class="dish-body">
+          <h4>Naked Berry Layer Cake</h4>
+          <p>Alternating sponge and cream, ringed in fresh strawberries and finished with mixed berries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="education" id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Education &amp; Qualifications</p>
+      <h2>Formal training, informal obsession</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="reveal">
+        <div class="edu-item">
+          <span>2008 — 2011</span>
+          <h4>M.Sc. Hotel &amp; Food Science</h4>
+          <p>Amazon Institute of Hotel and Tourism Management, Dehradun</p>
+        </div>
+        <div class="edu-item">
+          <span>Graduation</span>
+          <h4>Punjab Technical University</h4>
+          <p>Jalandhar, India</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="edu-item">
+          <span>Intermediate &amp; Matriculation</span>
+          <h4>Kumaun University</h4>
+          <p>Nainital · Uttarakhand &amp; Uttar Pradesh Examination Boards</p>
+        </div>
+        <p class="eyebrow" style="margin-top:30px;">Languages</p>
+        <div class="lang-list">
+          <span class="lang-chip">English</span>
+          <span class="lang-chip">Hindi</span>
+          <span class="lang-chip">Arabic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER / CONTACT ================= -->
+<footer id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Let's Talk Kitchens</p>
+      <h2>Ready for the next<br>batch.</h2>
+      <p style="color:var(--paper-dim); max-width:44ch; margin-top:18px; font-weight:300;">Open to Head Chef and fermentation production roles across the Gulf and beyond. Visa 18, transferable.</p>
+    </div>
+    <div class="reveal">
+      <div class="contact-list">
+        <a href="tel:+96566354124"><span class="tag">Phone</span> +965 6635 4124</a>
+        <a href="tel:+918273502229"><span class="tag">Alt</span> +91 8273 502229</a>
+        <a href="mailto:santoshpant@hotmail.com"><span class="tag">Email</span> santoshpant@hotmail.com</a>
+        <span style="display:flex; gap:12px; align-items:center;"><span class="tag" style="font-family:var(--font-mono); font-size:.62rem; color:var(--sage); text-transform:uppercase; letter-spacing:.08em; width:70px;">Based</span> Kuwait · Pithoragarh, Uttarakhand (permanent)</span>
+        <a class="btn-ghost" style="margin-top:10px; align-self:flex-start;" href="Santosh_Kumar_Pant_CV.pdf" download>Download Full CV ↓</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Santosh Kumar Pant — Head Chef, Fermentation Production Specialist</span>
+    <span>Built with ❤️ by Garvit Pant</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Mobile nav: simple show/hide could be added; kept single-page anchor nav minimal for now */
+
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- hero jar 3D tilt ---- */
+  var heroJar = document.getElementById('heroJar');
+  var jarStage = document.querySelector('.jar-stage');
+  if(heroJar && jarStage && !reduceMotion){
+    function tilt(x, y, rect){
+      var px = (x - rect.left) / rect.width - .5;
+      var py = (y - rect.top) / rect.height - .5;
+      heroJar.style.transform = 'rotateY(' + (px*22) + 'deg) rotateX(' + (py*-22) + 'deg)';
+    }
+    jarStage.addEventListener('mousemove', function(e){
+      tilt(e.clientX, e.clientY, jarStage.getBoundingClientRect());
+    });
+    jarStage.addEventListener('mouseleave', function(){
+      heroJar.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+    jarStage.addEventListener('touchmove', function(e){
+      if(e.touches && e.touches[0]){
+        tilt(e.touches[0].clientX, e.touches[0].clientY, jarStage.getBoundingClientRect());
+      }
+    }, {passive:true});
+  }
+
+  /* gentle idle float for hero jar */
+  if(!reduceMotion){
+    var t = 0;
+    setInterval(function(){
+      t += 0.02;
+      var float = Math.sin(t) * 4;
+      heroJar && (heroJar.style.marginTop = float + 'px');
+    }, 40);
+  }
+
+  /* ---- experience jar fill tied to scroll ---- */
+  var expSection = document.getElementById('experience');
+  var expLiquid = document.getElementById('expLiquid');
+  function updateExpFill(){
+    if(!expSection || !expLiquid) return;
+    var rect = expSection.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var total = rect.height + vh;
+    var passed = vh - rect.top;
+    var pct = Math.min(1, Math.max(0, passed / total));
+    expLiquid.style.height = (8 + pct*80) + '%';
+  }
+  window.addEventListener('scroll', updateExpFill, {passive:true});
+  updateExpFill();
+
+  /* ---- competency card 3D tilt ---- */
+  var cards = document.querySelectorAll('.comp-grid .card');
+  if(!reduceMotion){
+    cards.forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left)/r.width - .5;
+        var py = (e.clientY - r.top)/r.height - .5;
+        card.style.transform = 'rotateY(' + (px*10) + 'deg) rotateX(' + (py*-10) + 'deg) translateZ(6px)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = 'rotateY(0) rotateX(0) translateZ(0)';
+      });
+    });
+  }
+
+  /* ---- gallery: hidden until the bell is pressed ---- */
+  var blastBtn = document.getElementById('blastBtn');
+  var dishField = document.getElementById('dishField');
+  var ripple = document.getElementById('rippleFx');
+  var dishes = dishField.querySelectorAll('.dish');
+  var plated = false;
+
+  function revealDishes(){
+    dishes.forEach(function(d, i){
+      d.style.transitionDelay = (i*90) + 'ms';
+      requestAnimationFrame(function(){ d.classList.add('in'); });
+    });
+  }
+  function hideDishes(){
+    dishes.forEach(function(d){ d.style.transitionDelay = '0ms'; d.classList.remove('in'); });
+  }
+
+  blastBtn.addEventListener('click', function(){
+    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
+    plated = !plated;
+    blastBtn.setAttribute('aria-expanded', plated);
+    blastBtn.innerHTML = plated ? 'Clear the<br>Pass' : 'Press to<br>Plate';
+    if(plated){
+      revealDishes();
+    } else {
+      hideDishes();
+    }
+  });
+
+  /* ---- nav background on scroll ---- */
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.style.background = window.scrollY > 40
+      ? 'rgba(28,23,18,.92)'
+      : 'linear-gradient(to bottom, rgba(28,23,18,.86), rgba(28,23,18,0))';
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
